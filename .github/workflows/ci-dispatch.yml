@@ -19,7 +19,7 @@ jobs:
           client-payload: |
             {
               "repository": "${{ github.repository }}",
-              "branch": "${{ github.ref_name }}",
+              "branch": "${{ github.event_name == 'pull_request' && github.event.pull_request.base.ref || github.ref_name }}",
               "actor": "${{ github.actor }}",
               "sha": "${{ github.sha }}",
               "event_name": "${{ github.event_name }}",
