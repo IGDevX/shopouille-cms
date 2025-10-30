@@ -5,8 +5,6 @@ on:
     branches: ["main", "staging", "develop", "feature/*", "hotfix/*"]
   pull_request:
     branches: ["main", "staging", "develop"]
-  merge:
-    branches: ["main", "staging", "develop"]
 
 jobs:
   trigger:
