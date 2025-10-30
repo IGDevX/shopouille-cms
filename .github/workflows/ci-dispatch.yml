@@ -23,6 +23,5 @@ jobs:
               "actor": "${{ github.actor }}",
               "sha": "${{ github.sha }}",
               "event_name": "${{ github.event_name }}",
-              "pull_request_number": "${{ github.event.pull_request.number || '' }}",
-              "workflow_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              "pull_request_number": "${{ github.event.pull_request.number || '' }}"
             }
