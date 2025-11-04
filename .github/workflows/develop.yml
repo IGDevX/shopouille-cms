@@ -8,3 +8,6 @@ on:
 jobs:
   call:
     uses: igdevx/ShopouilleBackend/.github/workflows/publish.yml@main
+    with:
+      artifact_name: ${{ github.base_ref }}
+      dockerfile_path: src/main/docker/Dockerfile.jvm
