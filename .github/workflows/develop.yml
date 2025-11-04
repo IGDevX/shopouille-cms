@@ -1,7 +1,7 @@
 name: Runs on pull request on develop branch
 
 on:
-  pull_request:
+  push:
     branches:
       - develop
 
