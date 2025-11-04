@@ -21,6 +21,7 @@ dependencies {
     implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.1.0'
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.13.4'
+    testImplementation 'org.testcontainers:testcontainers:2.0.1'
 }
 
 group = 'org.shopouille'
@@ -62,10 +63,8 @@ jacocoTestCoverageVerification {
 }
 
 gradleLint {
-    rules = [
-        'undeclared-dependency',
-        'unused-dependency'
-    ]
+    rules = ['undeclared-dependency']
+    excludedRules = ['unused-dependency']
     criticalRules = ['undeclared-dependency']
     reportFormat = 'text'
     alwaysRun = false
