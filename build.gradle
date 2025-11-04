@@ -1,6 +1,9 @@
 plugins {
     id 'java'
     id 'io.quarkus'
+    id 'jacoco'
+    id 'nebula.lint' version '21.1.3'
+    id 'com.diffplug.spotless' version '8.0.0'
 }
 
 repositories {
@@ -10,15 +13,14 @@ repositories {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-hibernate-orm'
-    implementation 'io.quarkus:quarkus-flyway'
     implementation 'io.quarkus:quarkus-hibernate-orm-panache'
-    implementation 'io.quarkus:quarkus-resteasy'
     implementation 'io.quarkus:quarkus-resteasy-jackson'
-    implementation 'io.quarkus:quarkus-jdbc-postgresql'
-    implementation 'io.quarkus:quarkus-arc'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
+    implementation 'jakarta.persistence:jakarta.persistence-api:3.2.0'
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.1.0'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.13.4'
 }
 
 group = 'org.shopouille'
@@ -40,3 +42,41 @@ compileJava {
 compileTestJava {
     options.encoding = 'UTF-8'
 }
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.80
+            }
+        }
+    }
+}
+
+gradleLint {
+    rules = [
+        'undeclared-dependency',
+        'unused-dependency'
+    ]
+    criticalRules = ['undeclared-dependency']
+    reportFormat = 'text'
+    alwaysRun = false
+}
+
+spotless {
+  java {
+    importOrder()
+    removeUnusedImports()
+    trimTrailingWhitespace()
+    endWithNewline()
+  }
+}
+
