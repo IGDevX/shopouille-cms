@@ -8,3 +8,5 @@ on:
 jobs:
   call:
     uses: igdevx/ShopouilleBackend/.github/workflows/build.yml@main
+    with:
+      artifact_name: ${{ github.base_ref }}
