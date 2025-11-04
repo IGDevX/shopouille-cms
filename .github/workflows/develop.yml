@@ -8,5 +8,6 @@ on:
 jobs:
   call:
     uses: igdevx/ShopouilleBackend/.github/workflows/publish.yml@main
+    secrets: inherit
     with:
       dockerfile_path: src/main/docker/Dockerfile.jvm
