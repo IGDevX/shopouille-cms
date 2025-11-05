@@ -9,7 +9,7 @@ import org.shopouille.dto.ThemeSettingsDTO;
 import org.shopouille.dto.UpdateThemeSettingsDTO;
 import org.shopouille.model.ThemeSettings;
 
-@Path("/api/theme-settings")
+@Path("/theme-settings")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ThemeSettingsResource {

@@ -13,7 +13,7 @@ import org.shopouille.model.PageContent;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Path("/api/page-content")
+@Path("/page-content")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class PageContentResource {
