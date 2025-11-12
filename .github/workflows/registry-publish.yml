@@ -1,9 +1,11 @@
-name: Runs on push on main branch
+name: Runs on push on main, staging & develop branch
 
 on:
   push:
     branches:
       - main
+      - staging
+      - develop
 
 jobs:
   call:
