@@ -2,9 +2,9 @@ package org.shopouille.model;
 
 import io.quarkus.mongodb.panache.PanacheMongoEntityBase;
 import io.quarkus.mongodb.panache.common.MongoEntity;
-import org.bson.types.ObjectId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.bson.types.ObjectId;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -21,4 +21,3 @@ public class ThemeSettings extends PanacheMongoEntityBase {
         return find("{}").firstResult();
     }
 }
-

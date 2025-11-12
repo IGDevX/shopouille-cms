@@ -1,8 +1,7 @@
 package org.shopouille.dto;
 
-import org.shopouille.model.PageContent;
-
 import lombok.Data;
+import org.shopouille.model.PageContent;
 
 @Data
 public class PageContentDTO {
@@ -20,4 +19,3 @@ public class PageContentDTO {
         return dto;
     }
 }
-

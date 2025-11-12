@@ -22,22 +22,22 @@ public class ThemeSettingsResource {
             ErrorResponse error = ErrorResponse.fromMessage("Theme settings not found", 404);
             return Response.status(Response.Status.NOT_FOUND).entity(error).build();
         }
-        
+
         return Response.ok(ThemeSettingsDTO.fromEntity(settings)).build();
     }
 
     @PATCH
     public Response updateThemeSettings(@Valid UpdateThemeSettingsDTO updateDTO) {
         ThemeSettings settings = ThemeSettings.findTheOne();
-        
+
         boolean isNew = settings == null;
         if (isNew) {
             settings = new ThemeSettings();
         }
-        
+
         settings.setPrimaryColor(updateDTO.getPrimaryColor());
         settings.setSecondaryColor(updateDTO.getSecondaryColor());
-        
+
         if (isNew) {
             settings.persist();
         } else {
@@ -49,5 +49,3 @@ public class ThemeSettingsResource {
         return Response.ok(dto).build();
     }
 }
-
-

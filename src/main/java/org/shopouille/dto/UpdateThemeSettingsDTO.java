@@ -1,15 +1,14 @@
 package org.shopouille.dto;
 
-import org.shopouille.model.ThemeSettings;
-
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import org.shopouille.model.ThemeSettings;
 
 @Data
 public class UpdateThemeSettingsDTO {
     @NotBlank()
     private String primaryColor;
-    
+
     @NotBlank()
     private String secondaryColor;
 
@@ -20,4 +19,3 @@ public class UpdateThemeSettingsDTO {
         return dto;
     }
 }
-

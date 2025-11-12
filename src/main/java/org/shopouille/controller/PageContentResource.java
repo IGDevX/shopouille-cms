@@ -4,14 +4,13 @@ import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.bson.types.ObjectId;
 import org.shopouille.dto.ErrorResponse;
 import org.shopouille.dto.PageContentDTO;
 import org.shopouille.dto.UpdatePageContentDTO;
 import org.shopouille.model.PageContent;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Path("/page-content")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -24,7 +23,7 @@ public class PageContentResource {
         List<PageContentDTO> dtos = pages.stream()
             .map(PageContentDTO::fromEntity)
             .collect(Collectors.toList());
-        
+
         return Response.ok(dtos).build();
     }
 
@@ -38,16 +37,16 @@ public class PageContentResource {
                 ErrorResponse error = ErrorResponse.fromMessage("Invalid ObjectId format", Response.Status.BAD_REQUEST.getStatusCode());
             return Response.status(Response.Status.BAD_REQUEST).entity(error).build();
         }
-        
+
         PageContent page = PageContent.findById(objectId);
-        
+
         if (page == null) {
             ErrorResponse error = ErrorResponse.fromMessage("Page not found", Response.Status.NOT_FOUND.getStatusCode());
             return Response.status(Response.Status.NOT_FOUND).entity(error).build();
         }
-        
+
         PageContentDTO dto = PageContentDTO.fromEntity(page);
-        
+
         return Response.ok(dto).build();
     }
 
@@ -61,9 +60,9 @@ public class PageContentResource {
             ErrorResponse error = ErrorResponse.fromMessage("Invalid ObjectId format", Response.Status.BAD_REQUEST.getStatusCode());
             return Response.status(Response.Status.BAD_REQUEST).entity(error).build();
         }
-        
+
         PageContent page = PageContent.findById(objectId);
-        
+
         if (page == null) {
             ErrorResponse error = ErrorResponse.fromMessage("Page not found", Response.Status.NOT_FOUND.getStatusCode());
             return Response.status(Response.Status.NOT_FOUND).entity(error).build();
@@ -77,5 +76,3 @@ public class PageContentResource {
         return Response.ok(dto).build();
     }
 }
-
-

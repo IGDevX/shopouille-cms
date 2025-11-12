@@ -1,9 +1,9 @@
-name: Runs on push on develop branch
+name: Runs on pull request on staging branch
 
 on:
   push:
     branches:
-      - develop
+      - staging
 
 jobs:
   call:

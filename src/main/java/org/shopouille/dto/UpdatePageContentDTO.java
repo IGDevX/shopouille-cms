@@ -1,9 +1,8 @@
 package org.shopouille.dto;
 
-import org.shopouille.model.PageContent;
-
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import org.shopouille.model.PageContent;
 
 @Data
 public class UpdatePageContentDTO {
@@ -16,4 +15,3 @@ public class UpdatePageContentDTO {
         return dto;
     }
 }
-

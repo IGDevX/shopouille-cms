@@ -1,8 +1,7 @@
 package org.shopouille.dto;
 
-import org.shopouille.model.ThemeSettings;
-
 import lombok.Data;
+import org.shopouille.model.ThemeSettings;
 
 @Data
 public class ThemeSettingsDTO {
@@ -18,4 +17,3 @@ public class ThemeSettingsDTO {
         return dto;
     }
 }
-

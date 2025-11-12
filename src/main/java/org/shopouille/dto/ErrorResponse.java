@@ -14,4 +14,3 @@ public class ErrorResponse {
         return response;
     }
 }
-

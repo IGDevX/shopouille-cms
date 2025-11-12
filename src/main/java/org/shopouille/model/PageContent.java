@@ -15,4 +15,3 @@ public class PageContent extends PanacheMongoEntityBase {
     public String title;
     public String content;
 }
-
