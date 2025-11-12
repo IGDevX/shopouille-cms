@@ -1,4 +1,4 @@
-name: Runs on taging a new version
+name: Runs on tagging a new version
 
 on:
   push:
