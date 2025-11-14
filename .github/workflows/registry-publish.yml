@@ -13,4 +13,4 @@ jobs:
     secrets: inherit
     with:
       dockerfile_path: src/main/docker/Dockerfile.native-micro
-      gradle_args: -Dquarkus.profile=prod -Dquarkus.native.enabled=true
+      gradle_args: -Dquarkus.profile=production -Dquarkus.native.enabled=true
