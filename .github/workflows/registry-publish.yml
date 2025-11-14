@@ -12,4 +12,5 @@ jobs:
     uses: igdevx/ShopouilleBackend/.github/workflows/publish.yml@main
     secrets: inherit
     with:
-      dockerfile_path: src/main/docker/Dockerfile.jvm
+      dockerfile_path: src/main/docker/Dockerfile.native-micro
+      gradle_args: -Dquarkus.profile=prod -Dquarkus.native.enabled=true
