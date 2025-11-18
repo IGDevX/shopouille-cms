@@ -3,7 +3,10 @@ package org.shopouille.dto;
 import lombok.Data;
 import org.shopouille.model.ThemeSettings;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 @Data
+@RegisterForReflection
 public class ThemeSettingsDTO {
     private String id;
     private String primaryColor;

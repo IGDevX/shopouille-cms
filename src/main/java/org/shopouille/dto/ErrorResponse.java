@@ -1,8 +1,10 @@
 package org.shopouille.dto;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.Data;
 
 @Data
+@RegisterForReflection
 public class ErrorResponse {
     private String message;
     private int statusCode;

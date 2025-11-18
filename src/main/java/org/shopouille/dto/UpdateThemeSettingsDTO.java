@@ -4,7 +4,10 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.shopouille.model.ThemeSettings;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 @Data
+@RegisterForReflection
 public class UpdateThemeSettingsDTO {
     @NotBlank()
     private String primaryColor;
