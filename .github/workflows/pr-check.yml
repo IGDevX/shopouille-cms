@@ -1,0 +1,12 @@
+name: Runs on pull request on main, staging & develop branches
+
+on:
+  pull_request:
+    branches:
+      - main
+      - staging
+      - develop
+
+jobs:
+  call:
+    uses: igdevx/ShopouilleBackend/.github/workflows/check.yml@main
