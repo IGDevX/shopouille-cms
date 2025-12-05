@@ -1,9 +1,8 @@
 package org.shopouille.dto;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.Data;
 import org.shopouille.model.PageContent;
-
-import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @Data
 @RegisterForReflection
